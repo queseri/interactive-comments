@@ -7,8 +7,7 @@ function Main(props) {
         <>
             <Profile src={props.profile} alt={props.alt}
                 username={props.username}
-                created={props.created}
-            />
+                created={props.created} />
 
             <p>
                 {props.content}
