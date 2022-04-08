@@ -1,5 +1,108 @@
 @use '../base';
+@use '../utils';
+
 body {
     font-family: 'Rubik', sans-serif;
     background-color: base.$clr-very-light-gray;
+}
+
+.App {
+    padding: 2rem 1rem;
+    max-width: 45.625rem;
+    margin-inline: auto;
+}
+
+.comments-item {
+    margin-block-end: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+}
+
+.comment-visual {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: 1/1/1/4;
+
+    @include utils.mQ(43.75rem) {
+        grid-area: 1/2/1/3;
+    }
+}
+
+.figure-content {
+    display: flex;
+    align-items: center;
+}
+
+.comment-visual-img {
+    width: 2rem;
+}
+
+.secondary-comments {
+    position: absolute;
+    top: 12rem;
+}
+
+.btn-respond {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    gap: .5rem;
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+}
+
+.respond-control {
+    grid-area: 3/3/3/4;
+
+    @include utils.mQ(43.75rem) {
+        grid-area: 1/3/1/3;
+    }
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    grid-area: 3/1/3/2;
+
+    @include utils.mQ(43.75rem) {
+        grid-area: 1/1/4/2;      
+    }
+}
+
+.btn-minus,
+.btn-add {
+    background-color: transparent;
+    border: none;
+
+    &:focus,
+    &:hover {
+        cursor: pointer;
+        outline: dashed currentColor;
+        outline-offset: 0.15em;
+    }
+}
+
+.control-likes {
+    gap: .5rem;
+    @include utils.mQ(43.75rem) {
+       flex-direction: column;
+    }
+}
+
+.comment-text {
+    grid-area: 2/1/2/4;
+
+    @include utils.mQ(43.75rem) {
+        grid-area: 2/2/2/3;
+    }
 }
